@@ -1,0 +1,215 @@
+/* ============ Theme tokens ============ */
+:root{
+  --bg:#f9fafb;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --primary:#2563eb;
+  --primary-600:#1d4ed8;
+  --line:#e5e7eb;
+  --soft:#f3f4f6;
+
+  /* sizes */
+  --opt-pad:10px;
+  --opt-gap:10px;
+  --opt-radius:10px;
+  --badge-w:100px;   /* label column width (choices-col) */
+  --frame-h:130px;   /* option image frame height */
+}
+
+/* ============ Layout ============ */
+.aw-wrap{
+  max-width:960px;
+  margin:0 auto;
+  padding:24px;
+  color:var(--text);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+}
+
+/* ============ Header / Hero ============ */
+.aw-hero{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:16px;
+  margin-bottom:14px;
+  box-shadow:0 4px 12px rgba(0,0,0,.04);
+}
+.aw-hero-title{font-size:1.2rem;font-weight:700;margin:0 0 6px;}
+.pill{
+  display:inline-block;
+  background:#eef2ff;
+  color:#111827;
+  border-radius:999px;
+  padding:3px 10px;
+  font-size:.82rem;
+}
+
+/* ============ Question cards list ============ */
+.aw-list{display:grid;gap:12px;}
+.aw-qcard{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px;
+  box-shadow:0 3px 10px rgba(0,0,0,.03);
+}
+.aw-qhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.qidx{font-weight:700;}
+.tag.small{
+  padding:2px 8px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:.72rem;
+  color:#374151;
+  background:#f3f4f6;
+}
+
+/* ============ Question image ============ */
+.img-card{margin:8px 0;text-align:center;}
+.img-card img{
+  max-width:100%;
+  border-radius:8px;
+  border:1px solid var(--line);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+
+/* ============ TEST (A–E pills) ============ */
+.choices-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+.opt-pill{
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid #d0d5dd;
+  background:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:background .15s, border-color .15s, color .15s, box-shadow .15s;
+}
+.opt-pill:hover{ box-shadow:0 2px 6px rgba(0,0,0,.06); }
+.opt-pill.active{
+  background:var(--primary);
+  color:#fff;
+  border-color:var(--primary);
+}
+
+/* ============ TEST (image options – vertical list) ============ */
+/* Not: Öğrenci tarafında sadece pill kullanıyorsan bu blok opsiyoneldir. */
+.choices-col{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:var(--opt-gap);
+  margin-top:8px;
+}
+.opt{
+  display:grid;
+  grid-template-columns: var(--badge-w) 1fr;
+  align-items:center;
+  gap:12px;
+  padding:var(--opt-pad);
+  border:2px solid var(--line);
+  border-radius:var(--opt-radius);
+  background:#fff;
+  cursor:pointer;
+  transition:border-color .15s, box-shadow .15s, background .15s;
+  min-height: calc(var(--frame-h) + var(--opt-pad)*2);
+  box-sizing:border-box;
+}
+.opt:hover{border-color:var(--primary);}
+.opt.active{
+  border-color:var(--primary);
+  background:#eef2ff;
+  box-shadow:0 0 0 2px rgba(37,99,235,.10);
+}
+.opt .lbl{
+  grid-column:1;
+  width:var(--badge-w);
+  text-align:center;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  font-size:.85rem; font-weight:600; color:var(--muted);
+  background:var(--soft);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:8px 6px;
+}
+.opt .opt-img{
+  grid-column:2;
+  width:100%;
+  height:var(--frame-h);
+  object-fit:contain;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:8px;
+  box-shadow:0 1px 6px rgba(0,0,0,.04);
+}
+
+/* ============ Numeric (decimal) answer ============ */
+.numeric-wrap{ margin-top:10px; }
+.numeric-label{ display:block; margin-bottom:6px; font-weight:600; }
+.numeric-input{
+  width:220px;
+  padding:10px 12px;
+  border:1px solid #d0d5dd;
+  border-radius:8px;
+  font-size:16px;
+}
+.numeric-input:focus{ outline:none; border-color:var(--primary); }
+
+/* ============ Help & buttons ============ */
+.aw-help{
+  margin-top:10px;
+  display:none;
+  padding:10px;
+  background:#fafafa;
+  border:1px dashed var(--line);
+  border-radius:8px;
+}
+.aw-help.open{ display:block; }
+
+.btn{
+  border:1px solid var(--line);
+  background:var(--soft);
+  color:var(--text);
+  padding:6px 12px;
+  border-radius:9px;
+  font-size:.9rem;
+  cursor:pointer;
+}
+.btn:hover{ background:#ebeef3; }
+.btn-primary{ background:var(--primary); color:#fff; border:none; }
+.btn-primary:hover{ background:var(--primary-600); }
+.btn-ghost{ background:transparent; border:1px solid var(--line); }
+.btn-ghost:hover{ background:#f3f4f6; }
+
+/* ============ Alerts / summary ============ */
+.aw-error{
+  background:#ffecec;
+  border:1px solid #fbcaca;
+  color:#9f1239;
+  padding:10px 12px;
+  border-radius:10px;
+  margin:10px 0 14px;
+}
+.aw-top{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px 16px;
+  margin-bottom:14px;
+  box-shadow:0 4px 20px rgba(2,6,23,.04);
+}
+.aw-sub{ color:var(--muted); }
+
+/* ============ Responsive tweaks ============ */
+@media (max-width:640px){
+  :root{
+    --badge-w:88px;
+    --frame-h:120px;
+    --opt-pad:8px;
+  }
+}

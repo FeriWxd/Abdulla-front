@@ -1,0 +1,157 @@
+.admin-panel {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.admin-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.back-btn {
+  padding: 10px 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.logout-btn {
+  background-color: #ff4d4f;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #d9363e;
+}
+
+.groups-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.group-box {
+  background: white;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  padding: 1.2rem 1rem;
+  width: 280px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.group-box:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.group-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #222;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 6px;
+  font-weight: 700;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f0f5ff;
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.user-card:hover {
+  background-color: #d0e2ff;
+}
+
+.user-card > div {
+  flex: 1;
+}
+
+.user-card strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+.user-card p {
+  margin: 2px 0 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.user-card select {
+  margin-right: 10px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+}
+
+.user-card select:hover,
+.user-card select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.user-card button {
+  background-color: #ff4d4f;
+  border: none;
+  padding: 6px 14px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.user-card button:hover {
+  background-color: #d9363e;
+}
+
+@media (max-width: 900px) {
+  .groups-container {
+    justify-content: center;
+  }
+
+  .group-box {
+    width: 90%;
+  }
+}

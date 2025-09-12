@@ -1,0 +1,233 @@
+.group-card {
+  max-width: 900px;
+  margin: 0;
+  background: linear-gradient(to bottom right, #f9fafb, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+  padding: 30px;
+  border: 1px solid #e5e7eb;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.group-card h2 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 30px;
+}
+
+.group-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.student-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f3f4f6;
+  border-radius: 14px;
+  padding: 16px 24px;
+  transition: all 0.25s ease;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.student-line:hover {
+  background-color: #e8edf3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.left-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.status-emoji {
+  font-size: 22px;
+}
+
+.status-btn,
+.history-btn {
+  background-color: #e0e7ff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #1e3a8a;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.status-btn:hover {
+  background-color: #c7d2fe;
+}
+
+.history-btn:hover {
+  background-color: #facc15;
+  color: #1f2937;
+}
+
+.student-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #111827;
+  margin-left: 30px;
+  flex: 1;
+  text-align: right;
+}
+
+.unmarked-section {
+  margin-top: 40px;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.1);
+}
+
+.unmarked-section h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #92400e;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.unmarked-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.unmarked-section li {
+  background-color: #fff;
+  padding: 10px 14px;
+  border: 1px dashed #fbbf24;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  color: #7c2d12;
+}
+
+.status-button {
+  background-color: #fb923c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.status-button:hover {
+  background-color: #f97316;
+}
+
+/* ⭐ Ulduz düyməsi - PARLAMA + OPTIMISTIC durumlar */
+.star-button {
+  position: relative;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #9ca3af;           /* soluk gri */
+  opacity: 0.7;
+  filter: saturate(0.5);
+  margin-left: 5px;
+  padding: 4px;
+  border-radius: 9999px;
+  transition: color 0.2s ease, transform 0.15s ease, opacity 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.star-button:hover {
+  color: #d1a700;          /* hover'da hafif sarı */
+  transform: translateY(-1px);
+  filter: saturate(0.9);
+}
+
+.star-button:active {
+  transform: scale(0.92);
+}
+
+.star-button[disabled] {
+  cursor: default;
+  opacity: 0.6;
+}
+
+/* Aktif yıldız: parlak altın + ışıma */
+.star-button.active {
+  color: #fbbf24; /* Tailwind amber-400 */
+  opacity: 1;
+  filter: none;
+  text-shadow: 0 0 6px rgba(251, 191, 36, 0.8);
+  box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.0);
+  animation: star-glow 600ms ease-out;
+}
+
+/* İlk tıkta parlayan halka */
+.star-button.active::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  pointer-events: none;
+  border-radius: 9999px;
+  background: radial-gradient(circle at center, rgba(251,191,36,0.35) 0%, rgba(251,191,36,0.18) 40%, rgba(251,191,36,0) 70%);
+  animation: star-pulse 520ms ease-out forwards;
+}
+
+/* Kaydederken hafif nabız efekti */
+.star-button.saving {
+  animation: star-saving 0.9s ease-in-out infinite;
+}
+
+/* İçteki emojiye ayrı animasyon (daha canlı parlama) */
+.star-emoji {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.star-button.active .star-emoji {
+  animation: star-pop 320ms ease-out;
+}
+
+/* KEYFRAMES */
+@keyframes star-pop {
+  0%   { transform: scale(0.9) rotate(0deg);  filter: brightness(95%); }
+  60%  { transform: scale(1.35) rotate(12deg); filter: brightness(130%); }
+  100% { transform: scale(1.0) rotate(0deg);  filter: brightness(100%); }
+}
+
+@keyframes star-pulse {
+  0%   { opacity: 0; transform: scale(0.7); }
+  40%  { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0; transform: scale(1.25); }
+}
+
+@keyframes star-glow {
+  0%   { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.0); }
+  60%  { box-shadow: 0 0 20px 6px rgba(251, 191, 36, 0.45); }
+  100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.0); }
+}
+
+@keyframes star-saving {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-1px); }
+  100% { transform: translateY(0px); }
+}

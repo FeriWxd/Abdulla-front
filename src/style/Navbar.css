@@ -1,0 +1,56 @@
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0; right: 0; left: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, #ffffff, #f8fafc);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+}
+
+/* LOGO */
+.logo a {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #2563eb;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: color .2s ease;
+}
+.logo a:hover { color: #1d4ed8; }
+
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: .75rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Buton tarzı linkler */
+.nav-item {
+  background: #2563eb;
+  color: #fff !important;
+  padding: .45rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: .95rem;
+  border: none;
+  cursor: pointer;
+  transition: background .2s ease, transform .12s ease;
+  text-decoration: none;    /* underline yok */
+  display: inline-block;
+}
+.nav-item:hover { background: #1d4ed8; transform: translateY(-1px); }
+.nav-item:active { transform: scale(.98); }
+
+/* Logout kırmızı varyant */
+.logout-btn { background: #ef4444; }
+.logout-btn:hover { background: #dc2626; }
+
+/* Link içindeki <a> için underline koruması */
+.nav-item a { color: inherit; text-decoration: none; }

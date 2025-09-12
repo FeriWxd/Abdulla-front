@@ -1,0 +1,213 @@
+:root{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --primary:#2563eb;
+  --line:#e5e7eb;
+  --green:#16a34a;
+  --amber:#d97706;
+  --blue:#2563eb;
+}
+
+.profile-wrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 24px 16px 60px;
+  color: var(--text);
+  background: var(--bg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+.profile-card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 24px rgba(2,6,23,.06);
+}
+
+.profile-header{ display:flex; gap:14px; align-items:center; margin-bottom: 12px; }
+.avatar{
+  width: 60px; height: 60px; border-radius: 999px;
+  display:flex; align-items:center; justify-content:center;
+  font-weight: 800; font-size: 1.1rem; color: white; background: var(--primary);
+  box-shadow: 0 2px 10px rgba(37,99,235,.25);
+}
+.head-texts{ display:flex; flex-direction:column; }
+.profile-title{ margin:0; font-size:1.4rem; font-weight:800; }
+.muted{ color: var(--muted); margin: 2px 0 0 0; }
+
+/* bilgiler */
+.info-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 10px;
+  margin: 12px 0 6px;
+}
+.info-item{
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fafafa;
+}
+.label{ font-size: .85rem; color: var(--muted); margin-bottom: 4px; }
+.value{ font-weight: 700; word-break: break-word; }
+
+/* KPI */
+.kpi-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 10px;
+  margin: 12px 0 16px;
+}
+.kpi{
+  border:1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background:#fff;
+  text-align:center;
+}
+.kpi-label{ font-size:.85rem; color:var(--muted); }
+.kpi-value{ font-size:1.3rem; font-weight:800; }
+
+/* bölüm başlığı */
+.section-title{ font-weight:800; margin: 2px 0 8px; }
+
+/* ödev listesi */
+.assn-list{ display:grid; gap:10px; }
+.assn-row{
+  display:grid; grid-template-columns: 1fr auto; align-items:center;
+  border:1px solid var(--line); border-radius:12px; padding:12px;
+  background:#fff; box-shadow:0 4px 18px rgba(2,6,23,.04);
+}
+.assn-title{ font-weight:800; }
+.assn-sub{ color:var(--muted); font-size:.92rem; margin-top:2px; }
+.assn-aside{ display:flex; gap:8px; align-items:center; }
+
+/* topics - eski temel haller */
+.topics{ display:inline-flex; gap:6px; flex-wrap:wrap; }
+.topic-pill{
+  display:inline-block; padding:2px 8px; border-radius:999px;
+  border:1px solid var(--line); background:#f3f4f6; font-size:.78rem;
+}
+.topic-more{ font-size:.85rem; color:var(--muted); margin-left: 4px; }
+
+/* chips */
+.chip{
+  display:inline-block; border-radius:999px; padding:4px 10px;
+  font-size:.8rem; border:1px solid var(--line); background:#f3f4f6;
+}
+.chip-soft{ background:#eef2ff; border-color:#e0e7ff; }
+.chip-green{ background:#f0fdf4; border-color:#bbf7d0; color:var(--green); }
+.chip-amber{ background:#fef3c7; border-color:#fde68a; color:#92400e; }
+.chip-blue{ background:#e0f2fe; border-color:#bae6fd; color:#075985; }
+
+/* boş */
+.empty{
+  border:1px dashed var(--line); color:var(--muted);
+  border-radius:10px; padding:12px; text-align:center;
+}
+
+/* butonlar */
+.profile-buttons{ display:flex; gap:10px; justify-content:flex-end; margin-top:14px; }
+.profile-btn{
+  border:1px solid var(--line); background:#f3f4f6; color:#111827;
+  padding:8px 14px; border-radius:10px; cursor:pointer; font-weight:600;
+}
+.profile-btn:hover{ background:#eceef3; }
+.logout-btn{ background:#ef4444; color:#fff; border-color:transparent; }
+.logout-btn:hover{ filter: brightness(0.95); }
+.menu-btn{ background: var(--primary); color:#fff; border-color: transparent; }
+.menu-btn:hover{ filter: brightness(0.95); }
+
+/* === Ek: "Hepsini gör" link butonu === */
+.section-title .link-btn{
+  appearance:none; border:0; background:transparent;
+  color: var(--primary); font-weight:700; font-size:.9rem;
+  padding:2px 8px; border-radius:8px; cursor:pointer; margin-left:12px;
+}
+.section-title .link-btn:hover{ background: rgba(37,99,235,.08); }
+.section-title .link-btn:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+
+/* === Ek: Yoklama rozetleri === */
+.flags-row{ display:flex; flex-wrap:wrap; gap:6px; margin-top:2px; }
+.flag{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:3px 10px; border-radius:999px;
+  border:1px solid var(--line); background:#f8fafc;
+  font-size:.85rem; line-height:1;
+}
+.flag-ico{ font-size:1rem; }
+.flag-text{ white-space:nowrap; }
+
+.flag--warn{ background:#fef3c7; border-color:#fde68a; color:#92400e; }
+.flag--danger{ background:#fee2e2; border-color:#fecaca; color:#991b1b; }
+.flag--ok{ background:#f0fdf4; border-color:#bbf7d0; color:var(--green); }
+.flag--muted{ background:#f3f4f6; border-color:var(--line); color:var(--muted); }
+
+/* küçük ayraç için */
+.sep{ margin:0 6px; color:var(--muted); }
+
+/* == Ödev kartı meta düzeni == */
+.assn-meta{
+  color: var(--muted);
+  font-size: .9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.assn-meta .dot{ opacity: .5; }
+
+/* Konular satırı: sol etiket + sağda pill alanı */
+.topics-row{
+  display: grid;
+  grid-template-columns: 92px 1fr; /* Sol: 'Konular:' etiketi */
+  align-items: start;
+  column-gap: 10px;
+  row-gap: 6px;
+  margin-top: 8px;
+}
+.topics-label{
+  color: var(--muted);
+  font-size: .85rem;
+  line-height: 1.6;
+}
+
+/* Pill container: sarma */
+.topics{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Her pill tek satır + ellipsis */
+.topic-pill{
+  line-height: 1.35;
+  padding: 4px 10px;
+  max-width: 220px;          /* gerekirse 180–260 arası oynat */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* '+N daha' */
+.topic-more{
+  align-self: center;
+  font-size: .85rem;
+  color: var(--muted);
+  padding-left: 4px;
+}
+
+/* Sağdaki rozetleri hizala */
+.assn-aside{ justify-content: flex-end; }
+
+/* responsive */
+@media (max-width: 760px){
+  .info-grid{ grid-template-columns: 1fr; }
+  .kpi-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .topics-row{ grid-template-columns: 1fr; }
+  .topics-label{ margin-bottom: 4px; }
+}

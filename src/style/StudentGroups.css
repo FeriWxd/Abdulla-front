@@ -1,0 +1,21 @@
+.student-groups-container {
+  padding: 40px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.student-groups-container h1 {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.groups-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start; /* 💡 sola hizalanır */
+}
