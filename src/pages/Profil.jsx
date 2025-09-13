@@ -1,4 +1,4 @@
-// src/pages/Profil.jsx
+// src/Profil.jsx
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api, setAccessToken } from "../utils/api";
@@ -227,14 +227,6 @@ export default function Profile() {
 
               {/* Butonlar */}
               <div className="profile-buttons">
-                {/* ✅ SINAV menüsü */}
-                <button
-                  className="profile-btn menu-btn"
-                  onClick={() => navigate("/student/exams")}
-                >
-                  📝 SINAV
-                </button>
-
                 <button className="profile-btn logout-btn" onClick={handleLogout}>Çıxış</button>
                 <button className="profile-btn menu-btn" onClick={() => navigate("/Menu")}>🔙 Menü</button>
               </div>
@@ -247,3 +239,4 @@ export default function Profile() {
     </>
   );
 }
+

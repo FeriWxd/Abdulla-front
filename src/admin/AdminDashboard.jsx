@@ -1,4 +1,3 @@
-// src/admin/AdminDashboard.jsx
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "../style/AdminDashboard.css";
@@ -78,21 +77,7 @@ function AdminDashboard() {
             </div>
           </button>
 
-          {/* ✅ YENİ KISAYOL: Sınavlar */}
-          <button
-            className="tile accent-blue"
-            onClick={() => navigate("/admin/exams")}
-            onFocus={() => setFocusLabel("Sınavlar")}
-            onBlur={() => setFocusLabel("")}
-          >
-            <div className="tile-ico" aria-hidden>🎯</div>
-            <div className="tile-text">
-              <strong>Sınavlar</strong>
-              <span>Oluştur • Takvim • Sonuç</span>
-            </div>
-          </button>
-
-          {/* ✅ Yoklama */}
+          {/* ✅ Yoklama – diğerleriyle aynı görünüm */}
           <button
             className="tile accent-green"
             onClick={() => navigate("/admin/attendance")}
